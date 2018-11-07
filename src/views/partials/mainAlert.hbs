@@ -1,0 +1,14 @@
+{{#if user}}
+    <div id="mainAlert" class="alert alert-success">
+        Hello {{user.username}}, your account {{user.debt}}$
+    </div>
+    <script>
+        $(function(){
+            let debt = {{user.debt}}
+            let AA = {{appSettings.alertAmount}}
+            if (debt >= 0) $("#mainAlert").addClass("alert-success")
+            else if(debt < 0 && debt >= AA) $("#mainAlert").addClass("alert-warning")
+            else if(debt < AA) $("#mainAlert").addClass("alert-danger")
+        })
+    </script>
+{{/if}}

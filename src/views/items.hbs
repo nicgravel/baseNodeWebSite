@@ -1,0 +1,24 @@
+
+<div id="example-table"></div>
+
+<script>
+    $(function(){
+
+        $("#navItems").addClass("active");
+
+        $("#example-table").tabulator({
+            {{!-- height:"311px", --}}
+            ajaxURL: "/api/items",
+            layout:"fitColumns",
+            placeholder:"No Data Set",
+            columns:[
+                {title:"ID", field:"itemId", sorter:"number", width:100},
+                {title:"Name", field:"name", sorter:"string"},
+                {title:"UPC", field:"upc", sorter:"string"},
+                {title:"Price", field:"price", formatter:"money", formatterParams:{symbol:"$"}, width:100},
+            ],
+        });
+        {{!-- $("#example-table").tabulator("setData"); --}}
+    })
+
+</script>
