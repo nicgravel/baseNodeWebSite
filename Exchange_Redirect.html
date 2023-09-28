@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>EXFO Store redirection</title>
+    </head>
+    <body>
+        <button id="appStoreButton">Get Exchange</button>
+
+        <script>
+            document.getElementById('appStoreButton').addEventListener('click', function() {
+                // Check if the user is on an iOS device
+                if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
+                    // Redirect to the Apple App Store
+                    window.location.href = 'https://apps.apple.com/us/app/exfo-exchange/id1516686990'; // Replace with your actual App Store URL
+                }
+                // Check if the user is on an Android device
+                else if (/Android/.test(navigator.userAgent)) {
+                    // Redirect to the Google Play Store
+                    window.location.href = 'https://play.google.com/store/apps/details?id=com.exfo.flowautomation'; // Replace with your actual Play Store URL
+                }
+            });
+        </script>
+    </body>
+</html>
